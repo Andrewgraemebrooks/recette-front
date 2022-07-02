@@ -1,6 +1,10 @@
 import type { NextPage } from 'next'
+import React from 'react'
 
 const Login: NextPage = () => {
+  const [email, setEmail] = React.useState<string>('');
+  const [password, setPassword] = React.useState<string>('');
+
   return (
     <div className="flex flex-col border-solid border-2 min-h-screen">
       <div className="title flex justify-center pt-2">
@@ -10,15 +14,17 @@ const Login: NextPage = () => {
         <div className="mb-4">
           <label
             className="block text-gray-700 text-sm font-bold mb-2"
-            htmlFor="username"
+            htmlFor="email"
           >
-            Username
+            Email
           </label>
           <input
             className="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
-            id="username"
+            id="email"
             type="text"
-            placeholder="Username"
+            placeholder="email"
+            value={email}
+            onChange={(event) => setEmail(event.target.value)}
           />
         </div>
         <div className="mb-6">
@@ -33,6 +39,8 @@ const Login: NextPage = () => {
             id="password"
             type="password"
             placeholder="******************"
+            value={password}
+            onChange={(event) => setPassword(event.target.value)}
           />
           <p className="text-red-500 text-xs italic">
             Please choose a password.
