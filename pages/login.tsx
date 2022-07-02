@@ -3,7 +3,7 @@ import type { NextPage } from 'next'
 const Login: NextPage = () => {
   return (
     <div className="flex flex-col border-solid border-2 min-h-screen">
-      <div className="title flex justify-center">
+      <div className="title flex justify-center pt-2">
         <h1 className="text-2xl">Recette</h1>
       </div>
       <form className="flex items-center flex-col flex-grow justify-center bg-white shadow-md rounded px-8 pt-6 pb-8">
